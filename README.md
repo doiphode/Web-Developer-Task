@@ -15,10 +15,15 @@ You have been provided with a dataset (data.js), a mock-up of how we want the da
 ## Data structure
 
 _id_ - String. The unique ID representing an individual. 
+
 _firstName_ - String. The first name of the individual.
+
 _lastName_ - String. The last name of the individual.
+
 _jobTitle_ - String. The job of the individual.
+
 _reportsTo_ - Array. An array of strings with the name of the job title the individual reports to.
+
 _dateJoined_ - String. The date the individual joined the team. 
 
 ## Task
