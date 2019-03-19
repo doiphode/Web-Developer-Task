@@ -10,7 +10,7 @@ The King's Online team is made up of roughly 40 members in a large number of job
 
 For this test you will be working with a dataset that represents our team - potentially your future colleagues! 
 
-You have been provided with a dataset (data.js), a mock-up of how we want the data to be presented.
+You have been provided with a dataset (data.js) and a mock-up of how we want the data to be presented.
 
 ## Data structure
 
