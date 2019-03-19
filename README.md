@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the King's Online web developer test. This a short programming task that is designed to see how you approach problem-solving a technical issue. Please commit your response to a git repository and then email the link to louise.bennett@kcl.ac.uk by **Wednesday, March 27th at 17.00**.
+Welcome to the King's Online web developer test. This a short programming task that is designed to see how you approach problem-solving a technical issue. Please commit your response to your own git repository and then email the link to louise.bennett@kcl.ac.uk by **Wednesday, March 27th at 17.00**.
 
 ## The problem
 
@@ -10,7 +10,7 @@ The King's Online team is made up of roughly 40 members in a large number of job
 
 For this test you will be working with a dataset that represents our team - potentially your future colleagues! 
 
-You have been provided with a dataset (data.js), a mock-up of how we want the data to be presented, and some CSS for styling it.
+You have been provided with a dataset (data.js), a mock-up of how we want the data to be presented.
 
 ## Data structure
 
@@ -34,3 +34,11 @@ To successfully complete the task, you must:
 2. Print the data, creating a card for each individual as per the mock-up
 3. Sort the list of individuals by last name alphabetical (descending)
 4. Sort the cards by the date they joined the team (descending) 
+
+## Styling
+
+_Headings_ - Impact
+
+_Body Text_ - Georgia
+
+Beyond that, colours and styling are not important for this. More important is your ability to present the data.
