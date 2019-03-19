@@ -22,14 +22,31 @@ _lastName_ - String. The last name of the individual.
 
 _jobTitle_ - String. The job of the individual.
 
-_reportsTo_ - Array. An array of strings with the name of the job title the individual reports to.
+_reportsTo_ - String. The name of the job title the individual reports to.
 
-_dateJoined_ - String. The date the individual joined the team. 
+_dateJoined_ - Date Object. The date the individual joined the team. 
 
 ## Task
 
 To successfully complete the task, you must: 
 
+<<<<<<< HEAD
+1. Create the html/php file and print the data, creating a profile card for each individual (refer to the wireframes png file)
+2. Sort the list of individuals by last name alphabetical (descending)
+3. Sort the cards by the date they joined the team (descending) 
+
+## Styling (optional)
+
+This task focuses on your ability to handle and manipulate data. Styling is completely optional and below are our design guidelines (developer handover):
+
+_Headings_ - Impact, regular weight, 2.618rem
+
+_Body Text_ - Georgia, 2.618rem
+
+_Card Background Colour_ - #CDD7DC
+
+_Profile Pic Placeholder Background Colour_ - #5A6469
+=======
 1. Create the html/php
 2. Print the data, creating a card for each individual as per the mock-up
 3. Sort the list of individuals by last name alphabetical (descending)
@@ -42,3 +59,4 @@ _Headings_ - Impact
 _Body Text_ - Georgia
 
 Beyond that, colours and styling are not important for this. More important is your ability to present the data.
+>>>>>>> 9bd11276532acaef30bf9625c605f65ef48bc405
