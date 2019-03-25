@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
     <head>
         <title>King's Online . King's College London</title>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style type='text/css'>
+        <style>
             body {
                 font-family: Georgia;
                 font-size: 2.618rem;
@@ -14,6 +15,10 @@
                 font-weight: normal;
                 font-size: 2.618rem;
                 padding: 0 20px;
+            }
+            h1>span{
+                display: inline-block;
+                vertical-align: super;
             }
             .sort-wrap{
                 padding: 0 50px;
@@ -82,7 +87,7 @@
         </script>
     </head>
     <body>
-        <h1>King's Online . King's College London</h1>
+        <h1>King's Online <span>.</span> King's College London</h1>
         <?php
             define('LASTNAMEDESC', 'lastNameDesc');
             define('DATEJOINEDDESC', 'dateJoinedDesc');
