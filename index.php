@@ -73,20 +73,39 @@
         </style>
         <script>
             document.addEventListener('DOMContentLoaded',function() {
-                document.querySelector('select[name="sort"]').onchange=changeEventHandler;
+                document.querySelector('select[name="sortBy"]').onchange = onSortChange;
             },false);
-            function changeEventHandler(event) {
+
+            function onSortChange(event) {
                 document.getElementById('form').submit();
             }
         </script>
     </head>
     <body>
         <h1>King's Online . King's College London</h1>
+        <?php
+            define('LASTNAMEDESC', 'lastNameDesc');
+            define('DATEJOINEDDESC', 'dateJoinedDesc');
+
+            $sortBy = isset($_GET['sortBy']) && $_GET['sortBy'] ? 
+                $_GET['sortBy'] : 
+                LASTNAMEDESC;
+        ?>
         <div class="sort-wrap">
             <form id="form">
-                <select name="sort">
-                    <option value="lastNameDesc">Last Name &darr;</option>
-                    <option value="dateJoinedDesc" selected>Date Joined &darr;</option>
+                <select name="sortBy">
+                    <option 
+                        value="<?=LASTNAMEDESC?>" 
+                        <?=$sortBy == LASTNAMEDESC ? 'selected' : ''?>
+                    >
+                        Last Name &darr;
+                    </option>
+                    <option 
+                        value="<?=DATEJOINEDDESC?>"
+                        <?=$sortBy == DATEJOINEDDESC ? 'selected' : ''?>
+                    >
+                        Date Joined &darr;
+                    </option>
                 </select>
             </form>
         </div>
@@ -100,23 +119,39 @@
                 $data = str_replace(['var data = ', ';',], '', $data);
                 
                 $employees = json_decode($data,true);
-                // echo '<pre>';
-                // //var_dump($employees);
-                // echo '</pre>';
+
+                if($sortBy == LASTNAMEDESC){
+                    uasort($employees, function($a, $b){
+                        //negating as we are doing descending
+                        return -strcmp($a['lastName'], $b['lastName']);
+                    });
+                } else {
+                    uasort($employees, function($a, $b){
+                        //if joined date is not available push to last
+                        if(!isset($a['dateJoined'])) return 1;
+                        if(!isset($b['dateJoined'])) return -1;
+
+                        $aJoined = strtotime($a['dateJoined']);
+                        $bJoined = strtotime($b['dateJoined']);
+
+                        if($aJoined == $bJoined) return 0;
+                        return ($aJoined < $bJoined) ? 1 : -1;
+                    });
+                }
             ?>
             <?php foreach($employees as $employee): ?>
             <div class="card">
                 <div class="image"></div>
                 <div class="info">
                     <div class="fullname">
-                        <?php echo $employee['firstName'].' '.$employee['lastName']; ?>
+                        <?=$employee['firstName'].' '.$employee['lastName']?>
                     </div>
                     <div class="title">
-                        <?php echo $employee['jobTitle']; ?>
+                        <?=$employee['jobTitle']?>
                     </div>
                     <div class="reports-to">
                         <span class="label">Reports To:</span>
-                        <span class='value'><?php echo $employee['reportsTo']; ?></span>
+                        <span class='value'><?=$employee['reportsTo']?></span>
                     </div>
                 </div>
             </div>
